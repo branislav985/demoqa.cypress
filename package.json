@@ -1,0 +1,25 @@
+{
+  "name": "demokua",
+  "version": "1.0.0",
+  "description": "Cypres exercising",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/branislav985/demoqa.cypress.git"
+  },
+  "keywords": [
+    "Cypress"
+  ],
+  "author": "BA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/branislav985/demoqa.cypress/issues"
+  },
+  "homepage": "https://github.com/branislav985/demoqa.cypress#readme",
+  "dependencies": {
+    "cypress": "^12.12.0"
+  }
+}
