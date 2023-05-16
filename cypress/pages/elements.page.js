@@ -11,4 +11,10 @@ export default class ElementsPage {
       .should("be.visible")
       .click();
   }
+  clickOnTextBox() {
+    cy.get(elementsOnElementsPage.TEXT_BOX)
+      //   .contains("TextBox")
+      .should("be.visible")
+      .click();
+  }
 }

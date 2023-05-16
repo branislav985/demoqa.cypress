@@ -11,5 +11,6 @@ describe("Visite Demoka site, go to elements page and check the labels", () => {
 
   it("Should visite Demoka, click on elements and check labels", () => {
     elementsPage.clickOnElementsHeader();
+    elementsPage.clickOnTextBox();
   });
 });
