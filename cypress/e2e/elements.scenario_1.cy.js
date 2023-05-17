@@ -18,7 +18,6 @@ describe("Visite Demoka site, go to elements page and check the labels", () => {
 
     elementsPage.clickOnElementsHeader();
     elementsPage.clickOnTextBox();
-    cy.clearAllCookies;
     elementsPage.checkIfAllLabelsArePresented();
   });
 });
