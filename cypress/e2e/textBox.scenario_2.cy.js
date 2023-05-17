@@ -11,18 +11,18 @@ const permanentAdress = faker.location.secondaryAddress();
 
 describe("Populates and submit all input fields at Text Box page", () => {
   before(() => {
-    cy.visit("/");
+    cy.visit("/text-box");
+  });
+
+  Cypress.on("uncaught:exception", (err, runnable) => {
+    // returning false here prevents Cypress from
+    // failing the test
+    return false;
   });
 
   it("Should fill in all input fields and submit form", () => {
-    Cypress.on("uncaught:exception", (err, runnable) => {
-      // returning false here prevents Cypress from
-      // failing the test
-      return false;
-    });
-
-    cy.visit("/text-box");
     pageTexBox.enterDataInInputFields(name, email, adress, permanentAdress);
     pageTexBox.clickOnSubmitButton();
+    pageTexBox.assertSubmittedData(name, email, adress, permanentAdress);
   });
 });

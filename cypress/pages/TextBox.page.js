@@ -14,4 +14,17 @@ export default class TextBoxPage {
   clickOnSubmitButton() {
     cy.get(elementsTextBox.SUBMIT_BUTTON).click();
   }
+
+  assertSubmittedData(name, email, adress, permanentAdress) {
+    const inputDataArray = [name, email, adress, permanentAdress];
+    var submitedDataArray = [];
+    cy.get("p")
+      .should("be.visible")
+      .each(($li) => submitedDataArray.push($li.text().split(":")[1].trim()))
+      .then(() => {
+        for (var i = 0; i < inputDataArray.length; i++) {
+          expect(inputDataArray[i]).to.equal(submitedDataArray[i]);
+        }
+      });
+  }
 }
