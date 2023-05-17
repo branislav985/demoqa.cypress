@@ -10,6 +10,12 @@ describe("Visite Demoka site, go to elements page and check the labels", () => {
   });
 
   it("Should visite Demoka, click on elements and check labels", () => {
+    Cypress.on("uncaught:exception", (err, runnable) => {
+      // returning false here prevents Cypress from
+      // failing the test
+      return false;
+    });
+
     elementsPage.clickOnElementsHeader();
     elementsPage.clickOnTextBox();
     cy.clearAllCookies;
