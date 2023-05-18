@@ -3,4 +3,5 @@ export default class CheckBoxElement {
   ARROW_BUTTON = 'button[class = "rct-collapse rct-collapse-btn"]';
   CHECK_BOX = ".rct-checkbox";
   ALL_LABELS = ".rct-title";
+  EXPAND_BUTTON = 'svg[class="rct-icon rct-icon-expand-close"]';
 }

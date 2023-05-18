@@ -6,7 +6,7 @@ const pageCheckBox = new CheckBoxPage();
 
 describe("Check functionallity of check boxes and expand buttons", () => {
   before(() => {
-    cy.visit("/Elements");
+    cy.visit("/elements");
   });
 
   Cypress.on("uncaught:exception", (err, runnable) => {
@@ -15,8 +15,12 @@ describe("Check functionallity of check boxes and expand buttons", () => {
     return false;
   });
 
-  it("Should be visible only Home label, the expand all labels and check check buttons", () => {
+  var moreLabels = ["Desktop", "Angular"];
+
+  it("Check the functionality of check boxes", () => {
     pageCheckBox.clickOnCheckBoxButton();
-    // pageCheckBox.checkIfThereIsOnlyOneLabelWithTextHome();
+    pageCheckBox.checkIfThereIsOnlyOneLabelWithTextHome();
+    pageCheckBox.checkInMoreLabelsAndAssert(moreLabels);
+    pageCheckBox.checkIfSelectedLabelsHaveHalfSelectedParents(moreLabels);
   });
 });
