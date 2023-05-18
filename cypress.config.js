@@ -1,13 +1,14 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  defaultCommandTimeout: 20000,
+  defaultCommandTimeout: 5000,
   watchForFileChanges: true,
   numTestKeptInMemory: 1,
-  requestTimeout: 15000,
-  responseTimeout: 15000,
+  requestTimeout: 5000,
+  responseTimeout: 5000,
   viewportWidth: 1920,
   viewportHeight: 1080,
+  experimentalMemoryManagement: true,
   e2e: {
     baseUrl: "https://demoqa.com/",
 
