@@ -15,7 +15,7 @@ describe("Check functionallity of check boxes and expand buttons", () => {
     return false;
   });
 
-  var moreLabels = ["Desktop", "Angular"];
+  var moreLabels = ["Desktop", "Word File.doc"];
 
   it("Check the functionality of check boxes", () => {
     pageCheckBox.clickOnCheckBoxButton();
