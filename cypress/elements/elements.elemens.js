@@ -4,5 +4,5 @@ export default class ElementsOnElementPage {
   FUL_NAME_LABEL = "#userName-label";
   EMAIL_LABEL = "#userEmail-label";
   ADRESS_LABEL = "#currentAddress-label";
-  PERMANENT_ADRES_LABEL = "#permanentAddress-label";
+  PERMANENT_ADRESS_LABEL = "#permanentAddress-label";
 }

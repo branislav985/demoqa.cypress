@@ -9,7 +9,7 @@ describe("Visite Demoka site, go to elements page and check the labels", () => {
     cy.visit("/");
   });
 
-  it("Should visite Demoka, click on elements and check labels", () => {
+  it("Should visit Demoka, click on elements and check labels", () => {
     Cypress.on("uncaught:exception", (err, runnable) => {
       // returning false here prevents Cypress from
       // failing the test

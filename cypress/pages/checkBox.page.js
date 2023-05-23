@@ -8,7 +8,7 @@ export default class CheckBoxPage {
   clickOnCheckBoxButton() {
     cy.get(elementsCheckBox.CHECK_BOX_BUTTON).click();
   }
-  checkIfThereIsOnlyOneLabelWithTextHome() {
+  checkIfThereIsOnlyOneLabel() {
     cy.get(elementsCheckBox.ALL_LABELS).should("have.lengthOf", 1);
   }
   expandOrCollapseLabel(labelName) {
@@ -38,14 +38,9 @@ export default class CheckBoxPage {
           .parent("label")
           .children("input")
           .invoke("show")
-          .check();
+          .check()
+          .should("be.checked");
       }
-      cy.get(elementsCheckBox.ALL_LABELS)
-        .contains(elementName)
-        .parent("label")
-        .children("input")
-        .invoke("show")
-        .should("be.checked");
     });
   }
 
@@ -106,24 +101,26 @@ export default class CheckBoxPage {
       if (
         $body
           .find("span:contains(" + documentName + ")")
-          .parent("label")
-          .parent("span")
-          .parent("li")
-          .parent("ol")
-          .parent("li")
-          .parent("ol")
+          // .parent("label")
+          // .parent("span")
+          // .parent("li")
+          // .parent("ol")
+          // .parent("li")
+          .parents("ol")
+          .eq(1)
           .siblings("span")
           .children("label")
           .find("svg").length
       ) {
         cy.get(elementsCheckBox.ALL_LABELS)
           .contains(documentName)
-          .parent("label")
-          .parent("span")
-          .parent("li")
-          .parent("ol")
-          .parent("li")
-          .parent("ol")
+          // .parent("label")
+          // .parent("span")
+          // .parent("li")
+          // .parent("ol")
+          // .parent("li")
+          .parents("ol")
+          .eq(1)
           .siblings("span")
           .children("label")
           .find("svg")
@@ -135,9 +132,10 @@ export default class CheckBoxPage {
           // .parent("label")
           // .parent("span")
           // .parent("li")
-          .parents("ol")
+          // .parents("ol")
           // .parent("li")
           .parents("ol")
+          .eq(1)
           .siblings("span")
           .children("label")
           .children("span")
