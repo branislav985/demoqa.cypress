@@ -19,7 +19,7 @@ describe("Check functionallity of check boxes and expand buttons", () => {
 
   it("Check the functionality of check boxes", () => {
     pageCheckBox.clickOnCheckBoxButton();
-    pageCheckBox.checkIfThereIsOnlyOneLabelWithTextHome();
+    pageCheckBox.checkIfThereIsOnlyOneLabel();
     pageCheckBox.checkInMoreLabelsAndAssert(moreLabels);
     pageCheckBox.checkIfSelectedLabelsHaveHalfSelectedParents(moreLabels);
   });

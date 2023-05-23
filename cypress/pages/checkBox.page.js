@@ -8,7 +8,7 @@ export default class CheckBoxPage {
   clickOnCheckBoxButton() {
     cy.get(elementsCheckBox.CHECK_BOX_BUTTON).click();
   }
-  checkIfThereIsOnlyOneLabelWithTextHome() {
+  checkIfThereIsOnlyOneLabel() {
     cy.get(elementsCheckBox.ALL_LABELS).should("have.lengthOf", 1);
   }
   expandOrCollapseLabel(labelName) {
@@ -38,14 +38,9 @@ export default class CheckBoxPage {
           .parent("label")
           .children("input")
           .invoke("show")
-          .check();
+          .check()
+          .should("be.checked");
       }
-      cy.get(elementsCheckBox.ALL_LABELS)
-        .contains(elementName)
-        .parent("label")
-        .children("input")
-        .invoke("show")
-        .should("be.checked");
     });
   }
 
